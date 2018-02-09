@@ -24,8 +24,13 @@ do
 #              & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; }) 1> >(tee >(grep -q "ERROR: unknown error" && (echo 'revolux123' | sudo -S reboot) >&1))
 
 #etHASH
+# (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
+#          && { (unbuffer ${CURDIR}/ethminer/ethminer -U -S ${REGION}.ethash-hub.miningpoolhub.com:12020 -O ${NAME}:x --farm-retries 0 -FS exit) \
+#                   1> >(tee >(grep -q "unspecified launch failure" && kill $(cat $PIDFILE)) >&1) \
+#               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; })
+
 (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
-         && { (unbuffer ${CURDIR}/ethminer/ethminer -U -S ${REGION}.ethash-hub.miningpoolhub.com:12020 -O ${NAME}:x --farm-retries 0 -FS exit) \
+         && { (unbuffer ${CURDIR}/ethminer/start.sh) \
                   1> >(tee >(grep -q "unspecified launch failure" && kill $(cat $PIDFILE)) >&1) \
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; })
 

@@ -13,14 +13,14 @@
 ## For example, CLOCK=60 means the core clock will be increased 
 ## By 60Mhz OVER the stock value ## 
 ## Range should typically be between 0-200 without additional power supply tweaking ##
-CLOCK=100
+CLOCK=0
 
 ## CHANGE THIS TO INCREASE GPU MEMORY CLOCK VALUE ##
 ## This is NOT an absolute value, it is additive. ##
 ## For example, MEM=1500 means the Memory clock will be increased
 ## By 1500Mhz OVER the original stock value ##
 ## Range should typically be between 0-2000 without additional power supply and VBIOS tweaking ##
-MEM=200
+MEM=1050
  
 CMD_PREFIX='sudo DISPLAY=:0 XAUTHORITY=/var/run/lightdm/root/:0'
 CMD='/usr/bin/nvidia-settings'
@@ -28,10 +28,10 @@ CMD='/usr/bin/nvidia-settings'
 # echo "performance" >/sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
 # echo 2800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 # echo 2800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo "powersave" >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-echo "powersave" >/sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+# echo "powersave" >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+# echo "powersave" >/sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+# echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+# echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
 for i in {0..5}
   do
