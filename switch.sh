@@ -36,19 +36,19 @@ do
 
 #Groestl
 (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
-         && { (unbuffer ${CURDIR}/ccminer/ccminer -r 0 -a groestl -o stratum+tcp://hub.miningpoolhub.com:12004 -O ${NAME}:x) \
+         && { (unbuffer ${CURDIR}/ccminer/start.sh -groestl) \
                   1> >(tee >(grep -q "...terminating workio thread" && kill $(cat $PIDFILE)) >&1) \
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; })
 
 #myr-gr
 (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
-         && { (unbuffer ${CURDIR}/ccminer/ccminer -r 0 -a myr-gr -o stratum+tcp://hub.miningpoolhub.com:12005 -O ${NAME}:x) \
+         && { (unbuffer ${CURDIR}/ccminer/start.sh -myr-gr) \
                   1> >(tee >(grep -q "...terminating workio thread" && kill $(cat $PIDFILE)) >&1) \
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; })
 
 #Lyra2Rev2
 (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
-         && { (unbuffer ${CURDIR}/ccminer/ccminer -r 0 -a lyra2v2 -o stratum+tcp://hub.miningpoolhub.com:12018 -O ${NAME}:x) \
+         && { (unbuffer ${CURDIR}/ccminer/start.sh -lyra2v2) \
                   1> >(tee >(grep -q "...terminating workio thread" && kill $(cat $PIDFILE)) >&1) \
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; })
 
@@ -58,13 +58,13 @@ do
 
 #Feathercoin (NEOSCRYPT)
 (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
-         && { (unbuffer ${CURDIR}/ccminer/ccminer -r 0 -a neoscrypt -o stratum+tcp://hub.miningpoolhub.com:12012 -O ${NAME}:x) \
+         && { (unbuffer ${CURDIR}/ccminer/start.sh -neoscrypt) \
                   1> >(tee >(grep -q "...terminating workio thread" && kill $(cat $PIDFILE)) >&1) \
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; }) 
 
 #skein
 (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
-         && { (unbuffer ${CURDIR}/ccminer/ccminer -r 0 -a skein -o stratum+tcp://hub.miningpoolhub.com:12016 -O ${NAME}:x ) \
+         && { (unbuffer ${CURDIR}/ccminer/start.sh -skein) \
                   1> >(tee >(grep -q "...terminating workio thread" && kill $(cat $PIDFILE)) >&1) \
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; }) 
 
