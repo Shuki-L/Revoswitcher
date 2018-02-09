@@ -26,9 +26,9 @@ CURDIR=`dirname $0`
 # sudo ./overclock.sh
 echo 'revolux123' | sudo -S `dirname $0`/overclock.sh
 
-echo "Zero arg: $0"
-echo "First arg: $1"
-echo "Second arg: $2"
+echo "***************** Zero arg: $0 *****************"
+echo "***************** First arg: $1 *****************"
+echo "***************** Second arg: $2 *****************"
 
 case "$1" in
   "-groestl")
