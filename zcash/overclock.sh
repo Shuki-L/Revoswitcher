@@ -35,7 +35,7 @@ CMD='/usr/bin/nvidia-settings'
 
 echo '*************** OVERCLOCKING ZCASH ***************'
 
-for i in {0..5}
+for i in {0..7}
   do
     nvidia-smi -i ${i} -pm 0
     nvidia-smi -i ${i} -pl 110

@@ -18,7 +18,7 @@
 export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda-8.0/bin:$PATH
 #MINER NAME
-NAME=shuki.ziggy1
+NAME=seation.seation1
 REGION=europe
 
 ## DONT TOUCH THESE

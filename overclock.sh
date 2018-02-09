@@ -33,7 +33,7 @@ echo "powersave" >/sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
 echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
-for i in {0..5}
+for i in {0..7}
   do
     nvidia-smi -i ${i} -pm 0
     nvidia-smi -i ${i} -pl 110

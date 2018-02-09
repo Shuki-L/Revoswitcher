@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #MINER NAME
-NAME=shuki.ziggy1
+NAME=seation.seation1
 REGION=europe
 
 ## DONT TOUCH THESE

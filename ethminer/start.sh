@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #MINER NAME
-NAME=shuki.ziggy1
+NAME=seation.seation1
 REGION=europe
 
 ## DONT TOUCH THESE
@@ -34,6 +34,6 @@ echo 'revolux123' | sudo -S `dirname $0`/overclock.sh
 # sudo nvidia-smi -i 0:06:00.0 -pl 110
 
 
-#/home/revolux/Desktop/ethminer/ethminer -U -S us-east.ethash-hub.miningpoolhub.com:20535 -O shuki.ziggy1:x
+#/home/revolux/Desktop/ethminer/ethminer -U -S us-east.ethash-hub.miningpoolhub.com:20535 -O seation.seation1:x
 ./ethminer/ethminer -U -S ${REGION}.ethash-hub.miningpoolhub.com:12020 -O ${NAME}:x --farm-retries 0 -FS exit
 

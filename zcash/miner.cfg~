@@ -22,19 +22,19 @@ api          127.0.0.1:42000
 [server]
 server us-east.equihash-hub.miningpoolhub.com
 port   20570
-user   shuki.ziggy1
+user   seation.seation1
 pass   x
 
 # additional server 1
 [server]
 server asia.equihash-hub.miningpoolhub.com
 port   20570
-user   shuki.ziggy1
+user   seation.seation1
 pass   x
 
 #additional server 2
 [server]
 server europe.equihash-hub.miningpoolhub.com
 port   20570
-user   shuki.ziggy1
+user   seation.seation1
 pass   x
