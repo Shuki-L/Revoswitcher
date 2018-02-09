@@ -15,7 +15,8 @@
 #LBRY Credits
 #/home/revolux/Desktop/ccminer -a lbry -o stratum+tcp://YOUR-MINING-POOL-ADDRES:PORT -O WALLETNAME.RIG-NAME:PASSWORD 
 
-
+export LD_LIBRARY_PATH=/usr/local/cuda-8.0/lib64:$LD_LIBRARY_PATH
+export PATH=/usr/local/cuda-8.0/bin:$PATH
 #MINER NAME
 NAME=shuki.ziggy1
 REGION=europe
