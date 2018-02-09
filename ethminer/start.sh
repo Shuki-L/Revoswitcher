@@ -7,8 +7,8 @@ REGION=europe
 ## DONT TOUCH THESE
 CURDIR=`dirname $0`
 
-sudo ./overclock.sh
-
+# sudo ./overclock.sh
+echo 'revolux123' | sudo -S `dirname $0`/overclock.sh
 # echo '*************** OVERCLOCKING ***************'
 
 # sudo DISPLAY=:0 XAUTHORITY=/var/run/lightdm/root/:0 nvidia-settings -a '[gpu:0]/GPUMemoryTransferRateOffset[3]=1050'

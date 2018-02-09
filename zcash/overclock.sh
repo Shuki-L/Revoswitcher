@@ -33,6 +33,8 @@ CMD='/usr/bin/nvidia-settings'
 # echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 # echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
+echo '*************** OVERCLOCKING ZCASH ***************'
+
 for i in {0..5}
   do
     nvidia-smi -i ${i} -pm 0

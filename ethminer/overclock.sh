@@ -32,6 +32,8 @@ CMD='/usr/bin/nvidia-settings'
 # echo "powersave" >/sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
 # echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 # echo 800000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+echo '*************** OVERCLOCKING ETHMINER ***************'
+
 
 for i in {0..5}
   do

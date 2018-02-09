@@ -12,6 +12,7 @@ REGION=europe
 ## DONT TOUCH THESE
 CURDIR=`dirname $0`
 
-sudo ./overclock.sh
+# sudo ./overclock.sh
+echo 'revolux123' | sudo -S `dirname $0`/overclock.sh
 
 `dirname $0`/miner --config `dirname $0`/miner.cfg
