@@ -22,7 +22,7 @@ CLOCK=100
 ## Range should typically be between 0-2000 without additional power supply and VBIOS tweaking ##
 MEM=200
  
-
+CMD_PREFIX='sudo DISPLAY=:0 XAUTHORITY=/var/run/lightdm/root/:0'
 CMD='/usr/bin/nvidia-settings'
 # echo "performance" >/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
 # echo "performance" >/sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
@@ -48,8 +48,8 @@ for i in {0..6}
 
     for x in {3..3}
       do
-        ${CMD} -a [gpu:${i}]/GPUGraphicsClockOffset[${x}]=${CLOCK}
-        ${CMD} -a [gpu:${i}]/GPUMemoryTransferRateOffset[${x}]=${MEM}
+        ${CMD_PREFIX} ${CMD} -a [gpu:${i}]/GPUGraphicsClockOffset[${x}]=${CLOCK}
+        ${CMD_PREFIX} ${CMD} -a [gpu:${i}]/GPUMemoryTransferRateOffset[${x}]=${MEM}
     done
 
 done
