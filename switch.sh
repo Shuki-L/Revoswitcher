@@ -69,10 +69,16 @@ do
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; }) 
 
 #Equihash
+# (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
+#          && { (unbuffer ${CURDIR}/zcash/miner --eexit 3 --intensity 64 64 64 64 64 64 64 --cuda_devices 0 1 2 3 4 5 6 --templimit 80 --server ${REGION}.equihash-hub.miningpoolhub.com --port 12023 --user ${NAME} --pass x) \
+#                   1> >(tee >(grep -q "Total speed: 0 Sol/s" && kill $(cat $PIDFILE)) >&1) \
+#               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; }) 1> >(tee >(grep -q "ERROR: unknown error" && (echo 'revolux123' | sudo -S reboot) >&1))
+
 (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
-         && { (unbuffer ${CURDIR}/zcash/miner --eexit 3 --intensity 64 64 64 64 64 64 64 --cuda_devices 0 1 2 3 4 5 6 --templimit 80 --server ${REGION}.equihash-hub.miningpoolhub.com --port 12023 --user ${NAME} --pass x) \
+         && { (unbuffer ${CURDIR}/zcash/start.sh) \
                   1> >(tee >(grep -q "Total speed: 0 Sol/s" && kill $(cat $PIDFILE)) >&1) \
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; }) 1> >(tee >(grep -q "ERROR: unknown error" && (echo 'revolux123' | sudo -S reboot) >&1))
+
 done
 
 
