@@ -48,8 +48,8 @@ do
               & PID=$! && echo $PID >$PIDFILE ; wait $PID || true; })
 
 
-#Cryptonight
-${CURDIR}/xmrMiner/build/xmrMiner -r 0 -R 4 -l 16x54 -o stratum+tcp://${REGION}.cryptonight-hub.miningpoolhub.com:12024 -O ${NAME}:x -D
+#Cryptonight -shuki temprorary comment
+# ${CURDIR}/xmrMiner/build/xmrMiner -r 0 -R 4 -l 16x54 -o stratum+tcp://${REGION}.cryptonight-hub.miningpoolhub.com:12024 -O ${NAME}:x -D
 
 #Feathercoin (NEOSCRYPT)
 (PIDFILE=$(mktemp /tmp/foo.XXXXXX) && trap "rm $PIDFILE" 0 \
