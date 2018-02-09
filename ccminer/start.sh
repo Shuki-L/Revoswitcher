@@ -4,7 +4,7 @@
 # DO NOT START MINER WITH MORE THAN ONE ALGORITHM UNCOMMENTED
 
 #Myriad-Groestl
-/home/revolux/Desktop/ccminer/ccminer -a groestl -o stratum+tcp://hub.miningpoolhub.com:17004 -O amir.rig9:x 
+# /home/revolux/Desktop/ccminer/ccminer -a groestl -o stratum+tcp://hub.miningpoolhub.com:17004 -O amir.rig9:x 
 
 #Monero - Cryptonight
 #/home/revolux/Desktop/ccminer -a cryptonight -o stratum+tcp://YOUR-MINING-POOL-ADDRES:PORT -O WALLETNAME.RIG-NAME:PASSWORD 
